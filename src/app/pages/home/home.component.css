@@ -1,0 +1,34 @@
+.results-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .results-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Mantém duas colunas */
+    gap: 15px; /* Espaçamento entre as caixinhas */
+    max-width: 500px; /* Largura máxima reduzida */
+    width: 100%; /* Ocupa 100% do espaço disponível */
+  }
+  
+  .result-box {
+    background-color: #f0f0f0; /* Cor de fundo */
+    border-radius: 8px; /* Bordas arredondadas */
+    padding: 15px; /* Espaçamento interno ajustado */
+    text-align: center; /* Centralizar o texto */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra */
+    transition: background-color 0.3s; /* Transição suave */
+  }
+  
+  .result-box:hover {
+    background-color: #e0e0e0; /* Cor de fundo ao passar o mouse */
+  }
+  
+  .result-link {
+    text-decoration: none; /* Remove sublinhado */
+    color: #333; /* Cor do texto */
+    font-size: 16px; /* Tamanho da fonte */
+  }
+  

@@ -1,0 +1,15 @@
+<!-- O componente de upload de documentos -->
+<app-upload-documents (uploadSuccess)="handleUploadSuccess($event)" 
+                      (uploadError)="handleUploadError($event)"></app-upload-documents>
+
+<!-- Exibição dos documentos similares após o upload -->
+<div *ngIf="results.length > 0" class="results-container">
+    <h3>Documentos similares encontrados:</h3>
+    <div class="results-grid">
+      <div class="result-box" *ngFor="let result of results">
+        <a [href]="result.link" target="_blank" class="result-link">
+          {{ result.name }}
+        </a>
+      </div>
+    </div>
+  </div>

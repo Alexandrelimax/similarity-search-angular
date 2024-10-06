@@ -1,0 +1,19 @@
+{
+    "documents": [
+        {
+            "id": 1,
+            "name": "Documento 1",
+            "link": "https://docs.google.com/document/d/1example123"
+        },
+        {
+            "id": 2,
+            "name": "Documento 2",
+            "link": "https://docs.google.com/document/d/2example123"
+        },
+        {
+            "id": 3,
+            "name": "Documento 3",
+            "link": "https://docs.google.com/document/d/3example123"
+        }
+    ]
+}
