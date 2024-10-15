@@ -12,14 +12,12 @@
         <div id="loading" class="loading"></div>
         <div id="thumb" class="thumb">
             <p class="upload-message">Arraste e solte para enviar o arquivo</p>
-            
-            <!-- Botão customizado para o input file -->
             <label for="file-upload" class="custom-file-upload">
                 Explorar...
             </label>
             <input id="file-upload" type="file" class="hidden" accept="application/pdf" (change)="onFileSelected($event)" />
             <span *ngIf="!selectedFile">Nenhum ficheiro selecionado.</span>
-            <span *ngIf="selectedFile">{{ selectedFile.name }}</span> <!-- Exibir o nome do arquivo selecionado -->
+            <span *ngIf="selectedFile">{{ selectedFile.name }}</span>
         </div>
     </form>
 </div>

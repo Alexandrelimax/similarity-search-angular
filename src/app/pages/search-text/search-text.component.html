@@ -1,0 +1,20 @@
+<div class="text-search-container">
+  <h2>Busca de Texto</h2>
+  
+  <textarea [(ngModel)]="userInput" placeholder="Digite sua pergunta aqui..."></textarea>
+  
+  <button (click)="submit()" [disabled]="loading" class="search-button">Buscar</button>
+  
+  <div *ngIf="loading" class="loader">Carregando...</div> <!-- Indicador de carregamento -->
+  
+  <div *ngIf="responseText" class="response-container">
+    <p>{{ responseText }}</p>
+    <div class="document-link" *ngIf="documentLink">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-pdf" viewBox="0 0 16 16">
+        <path d="M5.5 0a.5.5 0 0 1 .5.5V3h4V.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5V5h-1V1H6v4H5.5V0z"/>
+        <path d="M5 5v9h6V5H5zm2.5 10a.5.5 0 0 1-.5-.5V13a.5.5 0 0 1 1 0v1.5a.5.5 0 0 1-.5.5zm2-1a.5.5 0 0 1-.5-.5V11a.5.5 0 0 1 1 0v1.5a.5.5 0 0 1-.5.5z"/>
+      </svg>
+      <a [href]="documentLink" target="_blank">{{ documentLink }}</a>
+    </div>
+  </div>
+</div>

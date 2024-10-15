@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { IDocument } from '../components/upload-documents/idocument';
+import { IDocumentResponse } from '../interfaces/idocument-response';
+import { ITextResponse } from '../interfaces/itext-response';
 
 @Injectable({
   providedIn: 'root',
@@ -12,21 +13,25 @@ export class SimilaritySearchService {
   constructor(private http: HttpClient) { }
 
 
-  sendFile(file: File): Observable<IDocument[]> {
+  sendFile(file: File): Observable<IDocumentResponse[]> {
     const formData = new FormData();
     formData.append('file', file);
 
-    return this.http.post<IDocument[]>(this.apiUrl, formData);
+    return this.http.post<IDocumentResponse[]>(`${this.apiUrl}/search-document`, formData);
 
   }
 
-  sendText(text: string): Observable<any> {
+  sendText(text: string): Observable<ITextResponse> {
     const body = { text };
-    return this.http.post<any>(`${this.apiUrl}/search-text`, body);
+    return this.http.post<ITextResponse>(`${this.apiUrl}/search-text`, body);
   }
 
-  getDocuments(): Observable<IDocument[]> {
-    return this.http.get<IDocument[]>(this.apiUrl);
+
+
+
+
+  getDocuments(): Observable<IDocumentResponse[]> {
+    return this.http.get<IDocumentResponse[]>(this.apiUrl);
   }
 
 }

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -12,6 +12,9 @@ import { CommonModule } from '@angular/common';
 import { UploadDocumentsComponent } from './components/upload-documents/upload-documents.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
+import { SearchTextComponent } from './pages/search-text/search-text.component';
+import { AuthService } from './services/auth.service';
+import { LoginService } from './services/login.service';
 
 @NgModule({
   declarations: [
@@ -20,16 +23,18 @@ import { HeaderComponent } from './components/header/header.component';
     HomeComponent,
     UploadDocumentsComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    SearchTextComponent
   ],
   imports: [
     CommonModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
-  providers: [SimilaritySearchService],
+  providers: [SimilaritySearchService, LoginService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

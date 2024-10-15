@@ -1,32 +1,41 @@
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
+import { UserSessionDto } from '../interfaces/iuser-dto';
+import { IUser } from '../interfaces/iuser';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private isAuthenticated = false;
 
-  constructor(private router: Router) { }
+  private userAuthenticate = new BehaviorSubject<UserSessionDto | null>(null);
+  isAuthenticate$ = this.userAuthenticate.asObservable();
 
-
-  login(username: string, password: string): boolean {
-
-    if (username === 'admin' && password === 'admin') {
-      this.isAuthenticated = true;
-      return true;
+  constructor() {
+    // Restaura o usuário autenticado do localStorage
+    const token = localStorage.getItem('token');
+    if (token) {
+      // Supondo que você tenha uma forma de obter o usuário com base no token
+      this.userAuthenticate.next(new UserSessionDto({ token } as IUser)); // Adapte conforme necessário
     }
-    return false;
   }
 
-  // Verifica se o usuário está autenticado
+  saveToken(user: IUser): void {
+    localStorage.setItem('token', user.token);
+    this.userAuthenticate.next(new UserSessionDto(user));
+  }
+
+  getToken(): string | null {
+    return localStorage.getItem('token');
+  }
+
+  logout(): void {
+    localStorage.removeItem('token');
+    this.userAuthenticate.next(null);
+  }
+
   isLoggedIn(): boolean {
-    return this.isAuthenticated;
-  }
-
-  // Logout
-  logout() {
-    this.isAuthenticated = false;
-    this.router.navigate(['/auth']);
+    return !!localStorage.getItem('token');
   }
 }

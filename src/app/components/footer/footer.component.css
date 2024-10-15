@@ -1,0 +1,59 @@
+.footer {
+    background-color: #1c2331;
+    color: white;
+    /* padding-top: 1rem; */
+
+    
+}
+
+.social-media {
+    background-color: #6351ce;
+    padding: 1rem;
+}
+
+.social-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-icons a {
+    color: white;
+    margin-left: 1rem;
+    text-decoration: none;
+}
+
+.link-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.column {
+    width: 20%; /* 4 columns with space in between */
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+h6 {
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.links p {
+    margin: 0.5rem 0;
+}
+
+.links a {
+    color: white;
+    text-decoration: none;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+.copyright {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: rgba(0, 0, 0, 0.2);
+}

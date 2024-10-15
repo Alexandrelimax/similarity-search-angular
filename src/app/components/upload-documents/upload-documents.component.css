@@ -4,6 +4,7 @@
     align-items: center;
     width: 100%;
     height: 100%;
+    margin-top: 40px; /* Adicionando espaço acima da área de upload */
 }
 
 .my-form {
@@ -12,15 +13,15 @@
     align-items: center;
     justify-content: center;
     padding: 1.5rem;
-    border: 2px dashed #4caf50;
+    border: 2px dashed #6351ce; /* Cor de borda */
     border-radius: 0.5rem;
-    background-color: #ede7ff;
+    background-color: #f3f4ff; /* Cor de fundo */
     width: 480px;
     height: 278px;
 }
 
 .icon {
-    color: #4caf50;
+    color: #6351ce; /* Cor do ícone */
     width: 3rem;
     height: 3rem;
     margin-bottom: 1rem;
@@ -40,12 +41,12 @@
 .upload-message {
     font-size: 1.25rem; /* texto grande */
     font-weight: 600; /* negrito */
-    color: #4caf50;
+    color: #6351ce; /* Cor do texto */
     margin-bottom: 0.5rem;
 }
 
 .custom-file-upload {
-    background-color: #4caf50;
+    background-color: #6351ce; /* Cor do botão */
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
@@ -58,11 +59,11 @@
 }
 
 .custom-file-upload:hover {
-    background-color: #45a049;
+    background-color: #4e3fbb; /* Cor ao passar o mouse */
 }
 
 .custom-file-upload:active {
-    background-color: #3e8e41;
+    background-color: #4c3da0; /* Cor ao clicar */
 }
 
 input[type="file"] {

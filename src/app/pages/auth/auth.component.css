@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+    background-color: #f0f4f8; /* Fundo suave */
+    font-family: 'Poppins', sans-serif; /* Usando a fonte Poppins */
+}
+  
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 7rem 0;
+    box-sizing: border-box;
+}
+  
+h2 {
+    margin-bottom: 20px;
+    color: #1c2331; /* Cor do texto */
+    font-weight: 600; /* Negrito */
+}
+  
+.form-group {
+    margin-bottom: 15px;
+    width: 300px; /* Largura fixa para o formulário */
+    box-sizing: border-box; /* Inclui padding e border na largura total */
+}
+  
+label {
+    margin-bottom: 5px;
+    font-weight: 600; /* Negrito */
+    color: #1c2331;
+}
+  
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Inclui padding e border na largura total */
+}
+  
+button {
+    padding: 10px;
+    background-color: #6351ce; /* Cor do botão */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%; /* Largura do botão igual ao input */
+    font-weight: 600; /* Negrito */
+}
+  
+button:hover {
+    background-color: #4e3fbb; /* Cor do botão ao passar o mouse */
+}
+  
+.error-message {
+    margin-top: 10px;
+    color: red; /* Cor da mensagem de erro */
+    font-weight: 600; /* Negrito */
+}

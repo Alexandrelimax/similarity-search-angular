@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Output, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { SimilaritySearchService } from '../../services/similarity-search.service';
-import { IDocument } from './idocument';
 
 @Component({
   selector: 'app-upload-documents',

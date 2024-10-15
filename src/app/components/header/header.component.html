@@ -1,1 +1,12 @@
-<p>header works!</p>
+<header>
+    <div class="logo">
+        <h1>Similarity Search</h1>
+    </div>
+    <nav *ngIf="isLoggedIn()">  <!-- Oculta a navegação se não estiver logado -->
+        <ul>
+            <li><a routerLink="/home">Similaridade de Documentos</a></li>
+            <li><a routerLink="/busca">Busca por Texto</a></li> <!-- Link para a nova página -->
+        </ul>
+    </nav>
+</header>
+  

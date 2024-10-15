@@ -4,10 +4,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthComponent } from './pages/auth/auth.component';
 import { HomeComponent } from './pages/home/home.component';
 import { authGuard } from './guards/auth.guard';
+import { SearchTextComponent } from './pages/search-text/search-text.component';
 
 const routes: Routes = [
   { path: 'auth', component: AuthComponent },
   { path: 'home', component: HomeComponent, canActivate: [authGuard] },
+  { path: 'busca', component: SearchTextComponent, canActivate: [authGuard] }, // Nova rota
   { path: '', redirectTo: '/auth', pathMatch: 'full' },
   { path: '**', redirectTo: '/auth' }
 ];
