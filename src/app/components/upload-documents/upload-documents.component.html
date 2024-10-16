@@ -9,14 +9,18 @@
                 <path d="m16 16-4-4-4 4"></path>
             </svg>
         </div>
-        <div id="loading" class="loading"></div>
+
+        <div id="loading" class="loading" *ngIf="isLoading">
+            <i class="fas fa-spinner fa-spin"></i> Carregando...
+        </div>
+
         <div id="thumb" class="thumb">
-            <p class="upload-message">Arraste e solte para enviar o arquivo</p>
+            <p class="upload-message" *ngIf="!isLoading">{{ uploadMessage }}</p> <!-- Mensagem padrão -->
             <label for="file-upload" class="custom-file-upload">
                 Explorar...
             </label>
             <input id="file-upload" type="file" class="hidden" accept="application/pdf" (change)="onFileSelected($event)" />
-            <span *ngIf="!selectedFile">Nenhum ficheiro selecionado.</span>
+            <span *ngIf="!selectedFile && !isLoading">Nenhum ficheiro selecionado.</span>
             <span *ngIf="selectedFile">{{ selectedFile.name }}</span>
         </div>
     </form>

@@ -9,7 +9,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class SimilaritySearchService {
-  private apiUrl = 'http://localhost:3000/documents';
+  private apiUrl = 'http://localhost:8000/similarity/document';
   private apiUrl2 = 'http://localhost:8000/similarity/text';
   constructor(private http: HttpClient) { }
 
@@ -18,9 +18,12 @@ export class SimilaritySearchService {
     const formData = new FormData();
     formData.append('file', file);
 
-    return this.http.post<IDocumentResponse[]>(`${this.apiUrl}/documents`, formData);
-
+    return this.http.post<{ response: IDocumentResponse[] }>(this.apiUrl, formData).pipe(
+      map((response) => response.response) // Retorna diretamente a lista de documentos
+    );
   }
+
+
 
   sendText(text: string): Observable<ITextResponse> {
     const body = { text };
@@ -31,9 +34,5 @@ export class SimilaritySearchService {
   }
 
 
-
-  getDocuments(): Observable<IDocumentResponse[]> {
-    return this.http.get<IDocumentResponse[]>(this.apiUrl);
-  }
 
 }

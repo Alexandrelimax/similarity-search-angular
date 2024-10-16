@@ -7,9 +7,11 @@
     <h3>Documentos similares encontrados:</h3>
     <div class="results-grid">
         <div class="result-box" *ngFor="let result of results">
-            <a [href]="result.link" target="_blank" class="result-link">
-                {{ result.name }}
+            <a [href]="result.url_documento" target="_blank" class="result-link">
+                <i class="fas" [ngClass]="{'fa-file-word': result.url_documento.endsWith('.docx'), 'fa-file-pdf': result.url_documento.endsWith('.pdf') }"></i>
+                {{ result.nome_documento }}
             </a>
         </div>
     </div>
 </div>
+

@@ -26,10 +26,19 @@
     height: 3rem;
     margin-bottom: 1rem;
 }
-
 .loading {
-    display: none; /* ou use a classe para mostrar quando necessário */
+    display: flex; /* Permite centrar o conteúdo */
+    align-items: center; /* Alinha verticalmente ao centro */
+    justify-content: center; /* Alinha horizontalmente ao centro */
+    font-size: 1.25rem; /* Tamanho do texto */
+    font-weight: 600; /* Negrito */
+    color: #6351ce; /* Cor do texto */
 }
+
+.loading i {
+    margin-right: 8px; /* Espaçamento entre o ícone e o texto */
+}
+
 
 .thumb {
     display: flex;

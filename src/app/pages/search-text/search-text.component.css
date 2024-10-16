@@ -63,10 +63,30 @@ textarea:focus {
 
 .document-link {
   display: flex;
-  align-items: center;
-  margin-top: 10px;
+  align-items: center; /* Alinha ícone e texto verticalmente */
+  margin-top: 10px; /* Espaçamento acima do link */
 }
 
-.document-link svg {
-  margin-right: 5px; /* Espaço entre o ícone e o link */
+.document-link-text {
+  text-decoration: none; /* Remove sublinhado */
+  color: #6351ce; /* Cor do texto do link */
+  font-size: 16px; /* Tamanho da fonte */
+  font-weight: bold; /* Negrito para destaque */
+  margin-left: 8px; /* Espaçamento entre o ícone e o texto */
+  padding: 5px 10px; /* Espaçamento interno */
+  border-radius: 5px; /* Bordas arredondadas */
+  transition: background-color 0.3s, transform 0.3s; /* Transições suaves */
+  position: relative; /* Para o efeito de sombra */
+}
+
+.document-link-text:hover {
+  background-color: rgba(99, 81, 206, 0.1); /* Cor de fundo suave ao passar o mouse */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15); /* Sombra suave ao passar o mouse */
+  transform: translateY(-1px); /* Efeito de leve elevação */
+}
+
+.document-link i {
+  margin-right: 8px; /* Espaçamento entre o ícone e o texto */
+  color: #d9534f; /* Cor do ícone (pode mudar conforme preferir) */
+  font-size: 20px; /* Tamanho do ícone */
 }

@@ -1,5 +1,4 @@
 export interface IDocumentResponse {
-    id: number;        // Identificador único do documento
-    name: string;      // Nome do documento
-    link: string;      // Link do documento
+    nome_documento: string;  // Nome do documento
+    url_documento: string;   // URL do documento
 }

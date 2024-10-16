@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { SimilaritySearchService } from '../../services/similarity-search.service';
+import { IDocumentResponse } from '../../interfaces/idocument-response'; // Importa a interface de documento
 
 @Component({
   selector: 'app-home',
@@ -9,15 +10,15 @@ import { SimilaritySearchService } from '../../services/similarity-search.servic
 export class HomeComponent {
   selectedFile: File | null = null;
   textInput: string = '';
-  results: any[] = [];  // Array para armazenar os resultados de documentos
+  results: IDocumentResponse[] = [];  // Atualizado para armazenar resultados no formato IDocumentResponse
 
   constructor(private similaritySearchService: SimilaritySearchService) { }
 
-  handleUploadSuccess(event: any) {
+  handleUploadSuccess(event: IDocumentResponse[]) {
     console.log('Upload realizado com sucesso:', event);
 
     // Atualiza o array de resultados com os dados recebidos do componente filho
-    this.results = event; // O 'event' contém os documentos mockados
+    this.results = event; // O 'event' contém os documentos recebidos
   }
 
   handleUploadError(error: string) {
