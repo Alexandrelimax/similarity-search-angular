@@ -7,11 +7,11 @@ import { authGuard } from './guards/auth.guard';
 import { SearchTextComponent } from './pages/search-text/search-text.component';
 
 const routes: Routes = [
-  { path: 'auth', component: AuthComponent },
-  { path: 'home', component: HomeComponent, canActivate: [authGuard] },
-  { path: 'busca', component: SearchTextComponent, canActivate: [authGuard] }, // Nova rota
-  { path: '', redirectTo: '/auth', pathMatch: 'full' },
-  { path: '**', redirectTo: '/auth' }
+  // { path: 'auth', component: AuthComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'busca', component: SearchTextComponent }, // Nova rota
+  // { path: '', redirectTo: '/auth', pathMatch: 'full' },
+  // { path: '**', redirectTo: '/auth' }
 ];
 
 @NgModule({

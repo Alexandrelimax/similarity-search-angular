@@ -19,8 +19,12 @@ export class SearchTextComponent {
     this.loading = true;
     this.similaritySearchService.sendText(this.userInput).subscribe({
       next: (response: ITextResponse) => {
-        this.responseText = response.text;
-        this.documentLink = response.documentLink;
+        console.log(response)
+        this.responseText = response.answer;
+        this.documentLink = response.document_url;
+        console.log(this.responseText)
+        console.log('--------------------------------------------------------')
+        console.log(this.documentLink)
       },
       error: (err) => {
         console.error('Erro ao buscar texto:', err);
